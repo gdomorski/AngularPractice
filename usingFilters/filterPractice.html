@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+	<title>Domorski AngularJS Practice - Using Filters</title>
+</head>
+<body>
+	
+	<input type="text" data-ng-model="name" /> 
+
+
+	<div class="names" data-ng-init="ceos=[	
+	 {name:'David M. Zaslav', company: 'Discovery Communications, Inc.', compensation: '$156,077,912'},
+	 {name:'Mario J. Gabelli', company: 'Gamco Investors, Inc. Et Al', compensation: '$88,518,411'},
+	 {name:'Satya Nadella', company: 'Microsoft Corp', compensation: '$84,308,755'}, 
+	 {name:'Lawrence J. Ellison', company: 'Oracle Corp', compensation: '$67,261,251'}, 
+	 {name:'Jon Feltheimer', company: 'Lions Gate Entertainment Corp', compensation: '$63,601,493'}, 
+	 {name:'T.M. (Roe) Patterson', company: 'Basic Energy Services Inc', compensation: '$62,863,840'},
+	 {name:'Steven M. Mollenkopf', company: 'Qualcomm Inc', compensation: '$60,740,592'}, 
+	 {name:'Leslie Moonves', company: 'CBS Corp', compensation: '$57,175,645'},
+	 {name:'Daniel R. Hesse', company: 'Sprint Corp', compensation: '$47,077,699'},
+	 {name:'Robert A. Iger', company: 'Walt Disney Co', compensation: '$46,497,018'}
+	 ]">
+
+		<h3> Looping over the Highest Paid CEOs</h3>
+
+
+		
+	</div>
+		<ul>
+			<li data-ng-repeat="chiefs in ceos | filter:name | orderBy:compensation"> {{ chiefs.name }} - {{ chiefs.company }} - {{chiefs.compensation }}</li>
+		</ul>
+	</div>
+
+
+
+	<script src="../angular.min.js"></script>
+</body>
