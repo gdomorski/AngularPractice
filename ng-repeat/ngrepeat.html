@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+	<title>Domorski AngularJS Practice</title>
+</head>
+<body>
+	<div class="names" data-ng-init="sportsteams=['Golden State Warriors', 'New York Knicks', 'Dallas Mavericks', 'Los Angeles Lakers']">
+		<h3> Looping over the teams </h3>
+		<ul>
+			<li data-ng-repeat="team in sportsteams"> {{ team }} </li>
+		</ul>
+	</div>
+
+
+
+	<script src="../angular.min.js"></script>
+</body>
