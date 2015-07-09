@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+	<title>Domorski AngularJS Practice</title>
+</head>
+<body>
+
+	<input type="text" data-ng-model="name" /> 
+
+
+	<div class="names" data-ng-init="ceos=[{name:'David M. Zaslav', company: 'Discovery Communications, Inc.'}, {name:'Mario J. Gabelli', company: 'Gamco Investors, Inc. Et Al'}, {name:'Satya Nadella', company: 'Microsoft Corp'}, {name:'Lawrence J. Ellison', company: 'Oracle Corp'}, {name:'Jon Feltheimer', company: 'Lions Gate Entertainment Corp'}, {name:'T.M. (Roe) Patterson', company: 'Basic Energy Services Inc'}]">
+
+		<h3> Looping over the Highest Paid CEOs</h3>
+
+
+		
+	</div>
+		<ul>
+			<li data-ng-repeat="chiefs in ceos | filter:name"> {{ chiefs.name }} - {{ chiefs.company }}</li>
+		</ul>
+	</div>
+
+
+
+	<script src="../angular.min.js"></script>
+</body>
