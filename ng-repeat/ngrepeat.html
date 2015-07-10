@@ -2,10 +2,14 @@
 <html data-ng-app="">
 <head>
 	<title>Domorski AngularJS Practice</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body>
+
+	<h1><center>Domorski Angular JS Practice, NG-Repeat makes code easier to read</center> </h1>
 	<div class="names" data-ng-init="sportsteams=['Golden State Warriors', 'New York Knicks', 'Dallas Mavericks', 'Los Angeles Lakers']">
-		<h3> Looping over the teams </h3>
+		
+		<h3>Looping over the teams</h3>
 		<ul>
 			<li data-ng-repeat="team in sportsteams"> {{ team }} </li>
 		</ul>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-ng-app="practiceApp">
+<head>
+	<title>Domorski AngularJS Practice - View, Controllers, Modules</title>
+	<!--Added Bootstrap for style purposes -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+
+	<center> <h1>Domorski AngularJS Practice - View, Controllers, Modules</h1> </center>
+	<div data-ng-controller="CEOController">
+	Insert CEO name or company here
+	<p>
+	<input type="text" data-ng-model="name" /> 
+		<h3>Filtering over the Highest Paid CEOs</h3>
+
+		<ul>
+			<li data-ng-repeat="chiefs in ceos | filter:name | orderBy:compensation"> {{ chiefs.name }} - {{ chiefs.company }} - {{chiefs.compensation }}</li>
+		</ul>
+	</div>
+
+	<script src="../angular.min.js"></script>
+	
+	<script>
+
+	//you get access to the angular object, which has access to the angular module. The first parameter is the name of the module. The second is an array with a bunch of helper modules
+	var practiceApp = angular.module('practiceApp', []);
+
+
+	var controllers = {};
+	//add a CEO Controller to the controllers object. The $scope is the "glue" between the glue and the controller
+	controllers.CEOController = function ($scope){
+		$scope.ceos = [	
+	 	{name:'David M. Zaslav', company: 'Discovery Communications, Inc.', compensation: '$156,077,912'},
+	 	{name:'Mario J. Gabelli', company: 'Gamco Investors, Inc. Et Al', compensation: '$88,518,411'},
+	 	{name:'Satya Nadella', company: 'Microsoft Corp', compensation: '$84,308,755'}, 
+	 	{name:'Lawrence J. Ellison', company: 'Oracle Corp', compensation: '$67,261,251'}, 
+	 	{name:'Jon Feltheimer', company: 'Lions Gate Entertainment Corp', compensation: '$63,601,493'}, 
+	 	{name:'T.M. (Roe) Patterson', company: 'Basic Energy Services Inc', compensation: '$62,863,840'},
+	 	{name:'Steven M. Mollenkopf', company: 'Qualcomm Inc', compensation: '$60,740,592'}, 
+	 	{name:'Leslie Moonves', company: 'CBS Corp', compensation: '$57,175,645'},
+	 	{name:'Daniel R. Hesse', company: 'Sprint Corp', compensation: '$47,077,699'},
+	 	{name:'Robert A. Iger', company: 'Walt Disney Co', compensation: '$46,497,018'},
+	 	{name:'Philippe P. Dauman', company: 'Viacom Inc.', compensation: '$44,334,858'},
+	 	{name:'Joseph W. Brown', company: 'MBIA Inc', compensation: '$43,602,334'},
+	 	{name:'Marissa A. Mayer', company: 'Yahoo Inc', compensation: '$42,083,508'},
+	 	{name:'Leonard S. Schleifer, M.D., Ph.D', company: 'Regeneron Pharmaceuticals Inc', compensation: '$41,965,424'}
+	 	];
+	}
+
+
+	practiceApp.controller(controllers)
+
+	</script>
+	
+</body>
