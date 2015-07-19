@@ -1,0 +1,10 @@
+.checkout {
+  border-style: solid;
+  border-width: 1px;
+  width: 700px;
+  background-color: #aaaaaa;
+}
+
+body {
+	background-color: #eeeeee
+}

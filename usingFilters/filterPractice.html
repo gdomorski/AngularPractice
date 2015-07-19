@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html data-ng-app="">
 <head>
-	<title>Domorski AngularJS Practice - Using Filters</title>
+	<title>Highest Paid CEOs of 2014 -- Greg Domorski</title>
+	<link rel="stylesheet" type="text/css" href="ceostyles.css">
 </head>
 <body>
+
 	Insert CEO name or company here
 	<p>
+
+
+
 	
 	<input type="text" data-ng-model="name" /> 
 
-	<div class="names" data-ng-init="ceos=[	
+
+	<div class="checkout">
+
+	<div class="ng-class: names;" data-ng-init="ceos=[	
 	 {name:'David M. Zaslav', company: 'Discovery Communications, Inc.', compensation: '$156,077,912'},
 	 {name:'Mario J. Gabelli', company: 'Gamco Investors, Inc. Et Al', compensation: '$88,518,411'},
 	 {name:'Satya Nadella', company: 'Microsoft Corp', compensation: '$84,308,755'}, 
@@ -23,18 +31,32 @@
 	 {name:'Philippe P. Dauman', company: 'Viacom Inc.', compensation: '$44,334,858'},
 	 {name:'Joseph W. Brown', company: 'MBIA Inc', compensation: '$43,602,334'},
 	 {name:'Marissa A. Mayer', company: 'Yahoo Inc', compensation: '$42,083,508'},
-	 {name:'Leonard S. Schleifer, M.D., Ph.D', company: 'Regeneron Pharmaceuticals Inc', compensation: '$41,965,424'}
+	 {name:'Leonard S. Schleifer, M.D., Ph.D', company: 'Regeneron Pharmaceuticals Inc', compensation: '$41,965,424'},
+	 {name:'Mr. Joshua W. Sapan', company: 'AMC Networks Inc.', compensation: '$40,313,856'},
+	 {name:'Marc Benioff', company: 'Salesforce Com Inc', compensation: '$39,907,534'},
+	 {name:'John R Strangfeld', company: 'Prudential Financial Inc', compensation: '$37,483,092'},
+	 {name:'Jeffrey R. Immelt', company: 'General Electric Co', compensation: '$37,250,774'},
+	 {name:'Jeffrey M. Leiden', company: 'Vertex Pharmaceuticals Inc', compensation: '$36,635,468'}
+
+
 	 ]">
 
-		<h3> Looping over the Highest Paid CEOs</h3>
-		
+
+
 	</div>
-		<ul>
+
+		<h2> Looping over the Highest Paid CEOs </h2>
+		
+	<div class="ng-style: checkout;">
+			<ul>
 			<li data-ng-repeat="chiefs in ceos | filter:name | orderBy:compensation"> {{ chiefs.name }} - {{ chiefs.company }} - {{chiefs.compensation }}</li>
 		</ul>
 	</div>
 
 
 
-	<script src="../angular.min.js"></script>
+	<script src="../angular.min.js">
+
+	angular.module('myApp', ['ngFx', 'ngAnimate'])
+	</script>
 </body>

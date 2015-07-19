@@ -3,7 +3,7 @@
 <head>
 	<title>Domorski AngularJS Practice - View, Controllers, Modules</title>
 	<!--Added Bootstrap for style purposes -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="ceostyles.css">
 </head>
 <body>
 
@@ -14,9 +14,11 @@
 	<input type="text" data-ng-model="name" /> 
 		<h3>Filtering over the Highest Paid CEOs</h3>
 
+	<div class="checkout">
 		<ul>
 			<li data-ng-repeat="chiefs in ceos | filter:name | orderBy:compensation"> {{ chiefs.name }} - {{ chiefs.company }} - {{chiefs.compensation }}</li>
 		</ul>
+	</div>
 	</div>
 
 	<script src="../angular.min.js"></script>
@@ -25,6 +27,8 @@
 
 	//you get access to the angular object, which has access to the angular module. The first parameter is the name of the module. The second is an array with a bunch of helper modules
 	var practiceApp = angular.module('practiceApp', []);
+
+
 
 
 	var controllers = {};
@@ -44,7 +48,12 @@
 	 	{name:'Philippe P. Dauman', company: 'Viacom Inc.', compensation: '$44,334,858'},
 	 	{name:'Joseph W. Brown', company: 'MBIA Inc', compensation: '$43,602,334'},
 	 	{name:'Marissa A. Mayer', company: 'Yahoo Inc', compensation: '$42,083,508'},
-	 	{name:'Leonard S. Schleifer, M.D., Ph.D', company: 'Regeneron Pharmaceuticals Inc', compensation: '$41,965,424'}
+	 	{name:'Leonard S. Schleifer, M.D., Ph.D', company: 'Regeneron Pharmaceuticals Inc', compensation: '$41,965,424'},
+	 	{name:'Mr. Joshua W. Sapan', company: 'AMC Networks Inc.', compensation: '$40,313,856'},
+	 	{name:'Marc Benioff', company: 'Salesforce Com Inc', compensation: '$39,907,534'},
+	 	{name:'John R Strangfeld', company: 'Prudential Financial Inc', compensation: '$37,483,092'},
+	 	{name:'Jeffrey R. Immelt', company: 'General Electric Co', compensation: '$37,250,774'},
+	 	{name:'Jeffrey M. Leiden', company: 'Vertex Pharmaceuticals Inc', compensation: '$36,635,468'}
 	 	];
 	}
 
